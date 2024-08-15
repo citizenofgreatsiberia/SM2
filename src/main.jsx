@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider} from "react-router-dom"
 import initReactFastclick from 'react-fastclick'
 import store from '@assets/store.js'
 import App from './App.jsx'
@@ -17,7 +17,7 @@ import './index.scss'
 
 initReactFastclick()
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
