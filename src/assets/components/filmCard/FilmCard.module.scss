@@ -1,0 +1,125 @@
+$box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+$orange-color: #F39C12;
+$font-color-dark: #fff;
+$font-color-light: #242424;
+
+@mixin button-colors($color) {
+    color: $color;
+    border-color: $color;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 700px) {
+        align-items: flex-start;
+    }
+
+    @media screen and (max-width: 420px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filmPicture {
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: $box-shadow;
+        object-fit: cover;
+
+        @media screen and (max-width: 700px) {
+            max-width: 150px;
+        }
+
+        @media screen and (max-width: 420px) {
+            max-width: 150px;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+    }
+
+    .filmInfo {
+        padding-left: 20px;
+
+        @media screen and (max-width: 420px) {
+            align-self: flex-start;
+            padding-left: 0;
+        }
+
+        .watchButtons {
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                margin: 5px 0;
+                background-color: transparent;
+                outline: none;
+                border-radius: 5px;
+                color: $font-color-dark;
+                font-size: 16px;
+                padding: 10px;
+                border: 1px solid $font-color-dark;
+                transition: .3s;
+                text-align: start;
+                cursor: pointer;
+                width: 100%;
+                max-width: 200px;
+                text-align: center;
+
+                @media screen and (max-width: 700px) {
+                    font-size: 14px;
+                }
+
+                &.dark {
+                    @include button-colors($font-color-dark);
+                }
+
+                &.light {
+                    @include button-colors($font-color-light);
+
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        @include button-colors($orange-color);
+                    }
+                }
+
+                @media (hover: none) {
+                    &:active {
+                        @include button-colors($orange-color);
+                    }
+                }
+            }
+        }
+
+        .miniTitle {
+            font-weight: bold;
+            font-size: 16px;
+
+            @media screen and (max-width: 700px) {
+                font-size: 12px;
+            }
+
+            span {
+                font-weight: normal;
+            }
+        }
+
+        .title {
+            padding-bottom: 10px;
+            font-size: 24px;
+
+            @media screen and (max-width: 700px) {
+
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .miniTitle {
+                font-size: 12px;
+            }
+        }
+    }
+}

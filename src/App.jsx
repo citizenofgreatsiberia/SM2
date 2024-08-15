@@ -1,17 +1,24 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { changeTheme } from './assets/themeSlice'
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { Outlet } from "react-router"
+import BackToTop from "./assets/components/backToTop/BackToTop.module"
+import Header from "@components/header/Header.module"
 
-function App() {
-  const theme = useSelector((state) => state.theme)
-  const dispatch = useDispatch()
+export default function App() {
+
+  const theme = useSelector(state => state.theme)
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.className = theme
+  }, [theme])
+
   return (
-    <div>
-      <h1>{theme}</h1>
-      <button onClick={() => dispatch(changeTheme())}>Click me!</button>
-    </div>
+    <>
+      <Header>
+      </Header>
+      <Outlet />
+      <BackToTop />
+    </>
   )
 }
-
-
-export default App
-{/* <div className={classNames({ [styles.wrapper]: true, [styles.darkmode]: theme === 'dark', [styles.lightmode]: theme === 'light' })}> */ }

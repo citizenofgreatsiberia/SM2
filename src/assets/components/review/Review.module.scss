@@ -1,0 +1,115 @@
+$box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+$orange-color: #F39C12;
+$font-color-dark: #fff;
+$font-color-light: #242424;
+$green: #196F3D;
+$yellow: #F1C40F;
+$red: #C0392B;
+
+@mixin user-select($select) {
+    -webkit-user-select: $select;
+    -moz-user-select: $select;
+    -ms-user-select: $select;
+    user-select: $select;
+}
+
+.wrapper {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: $box-shadow;
+
+    .header {
+        padding: 5px;
+        border-radius: 5px 5px 0 0;
+
+        &.light {
+            background-color: #ebebeb;
+        }
+
+        &.dark {
+            background-color: #3a3a3a;
+        }
+
+        .cite,
+        .time,
+        .title {
+            display: block;
+        }
+
+        .cite {
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 18px;
+        }
+    }
+
+    .reviewText {
+        text-align: justify;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .growButton {
+        @include user-select(none);
+        margin: 5px;
+        background-color: transparent;
+        outline: none;
+        border-radius: 5px;
+        color: $font-color-light;
+        font-size: 16px;
+        padding: 5px;
+        border: 1px solid $font-color-light;
+        transition: .3s;
+        text-align: start;
+        cursor: pointer;
+        text-align: center;
+
+        &.dark {
+            color: $font-color-dark;
+            border-color: $font-color-dark;
+        }
+
+        &.light {
+            color: $font-color-light;
+            border-color: $font-color-light;
+        }
+
+        &:hover {
+            color: $orange-color;
+            border-color: $orange-color;
+
+            @media (hover: none) {
+                color: $orange-color;
+                border-color: $orange-color;
+            }
+        }
+    }
+
+    .rateTitle {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+    .rate {
+        max-width: 150px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 16px;
+
+        &.green {
+            background-color: $green;
+        }
+
+        &.yellow {
+            background-color: $yellow;
+        }
+
+        &.red {
+            background-color: $red;
+        }
+    }
+}

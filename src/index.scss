@@ -1,0 +1,225 @@
+$bg-color-dark: #242424;
+$bg-color-light: #fff;
+$font-color-dark: #fff;
+$font-color-light: #242424;
+$orange-color: #F39C12;
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection,
+::-moz-selection {
+  background-color: $orange-color;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+html.dark {
+  background-color: $bg-color-dark;
+  color: $font-color-dark;
+}
+
+html.light {
+  background-color: $bg-color-light;
+  color: $font-color-light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 80px;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-link {
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color .5s;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.nav-link-dark {
+    color: $font-color-dark;
+  }
+
+  &.nav-link-light {
+    color: $font-color-light;
+  }
+
+  &.nav-link-active {
+    text-decoration: underline;
+  }
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: $orange-color;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.swiper-button-next::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 20px;
+  background-color: $orange-color;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  top: 20px;
+}
+
+.swiper-button-next::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 20px;
+  background-color: $orange-color;
+  transform: rotate(-45deg);
+  border-radius: 5px;
+  bottom: 21px;
+}
+
+.swiper-button-prev::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 20px;
+  background-color: $orange-color;
+  transform: rotate(-45deg);
+  border-radius: 5px;
+  top: 20px;
+}
+
+.swiper-button-prev::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 20px;
+  background-color: $orange-color;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  bottom: 21px;
+}
+
+@media (hover: none) {
+  :focus {
+    outline: none;
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

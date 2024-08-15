@@ -1,0 +1,37 @@
+$box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+
+.wrapper {
+    padding-top: 20px;
+
+    .title {
+        font-size: 24px;
+    }
+
+    .person {
+        overflow: hidden;
+
+        .personName {
+            max-width: 150px;
+            height: 50px;
+            overflow: hidden;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        padding-bottom: 20px;
+
+        .swiperSlide {
+            width: auto;
+            box-shadow: $box-shadow;
+
+            .photo {
+                width: 150px;
+                object-fit: cover;
+                height: 250px;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+        }
+    }
+}

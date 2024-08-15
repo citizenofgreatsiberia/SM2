@@ -1,0 +1,95 @@
+$bg-color-dark: #242424;
+$bg-color-light: #fff;
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+
+    &.active {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.sideBar {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    border-radius: 10px 0 0 10px;
+    transition: .3s;
+    z-index: 50;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &.active {
+        transform: translateX(-300px);
+        transition: transform .3s ease;
+    }
+
+    &.dark {
+        background-color: $bg-color-dark;
+    }
+
+    &.light {
+        background-color: $bg-color-light;
+    }
+
+    .head {
+        width: 100%;
+        height: 50px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+
+        &.dark {
+            background-color: $bg-color-dark;
+        }
+
+        &.light {
+            background-color: $bg-color-light;
+        }
+
+        .themeSwitcher {
+            position: absolute;
+            top: 10px;
+            left: 80px;
+        }
+
+        .cross {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .categories {
+        height: 100%;
+
+        .link {
+            display: block;
+
+            &.bold {
+                font-weight: bold;
+                text-decoration: underline;
+                font-size: 22px;
+            }
+        }
+
+        .space {
+            height: 80px;
+        }
+    }
+
+    .sidebarLink {
+        font-size: 20px;
+    }
+}

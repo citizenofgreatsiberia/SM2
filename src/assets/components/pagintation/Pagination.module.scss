@@ -1,0 +1,56 @@
+$font-color-dark: #fff;
+$font-color-light: #242424;
+
+.wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button {
+        border: none;
+        padding: 4px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 32px;
+        transition: .3s;
+        font-weight: bold;
+        background-color: transparent;
+
+        &:disabled {
+            cursor: auto;
+
+            &.dark {
+                color: $font-color-light;
+            }
+
+            &.light {
+                color: $font-color-dark;
+            }
+        }
+
+        &.dark {
+            color: $font-color-dark;
+        }
+
+        &.light {
+            color: $font-color-light;
+        }
+    }
+
+    .span {
+        text-align: center;
+        font-size: 22px;
+        padding: 0 10px;
+
+        &.dark {
+            color: $font-color-dark;
+        }
+
+        &.light {
+            color: $font-color-light;
+        }
+    }
+}

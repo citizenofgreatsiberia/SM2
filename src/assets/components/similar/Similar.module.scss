@@ -1,0 +1,32 @@
+$box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+
+.wrapper {
+    padding: 20px 0 20px;
+
+    .imgWrapper {
+        overflow: hidden;
+
+        .title {
+            max-width: 150px;
+            height: 50px;
+            overflow: hidden;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        padding-bottom: 20px;
+
+        .swiperSlide {
+            width: auto;
+            box-shadow: $box-shadow;
+
+            .img {
+                width: 150px;
+                object-fit: cover;
+                height: 250px;
+                cursor: pointer;
+            }
+        }
+    }
+}

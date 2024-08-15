@@ -1,0 +1,88 @@
+$orange-color: #F39C12;
+$bg-color-dark: #1C2833;
+$bg-color-light: #fff;
+$transition-duration: 0.8s;
+
+.switcher {
+    position: absolute;
+    // bottom: -35px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid $orange-color;
+
+    &.dark {
+        background-color: $bg-color-dark;
+        transition: $transition-duration;
+    }
+
+    &.light {
+        transition: $transition-duration;
+    }
+
+    .sun {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &.light {
+            background-color: $orange-color;
+            box-shadow: 0 0 5px $orange-color;
+            transition: $transition-duration;
+        }
+
+        &.dark {
+            background-color: $bg-color-light;
+            box-shadow: 0 0 5px $orange-color;
+            transform: translateX(28px);
+            transition: $transition-duration;
+        }
+    }
+
+    .star {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background-color: $bg-color-light;
+        transition: 3s;
+        transition-delay: .5s;
+
+        &.light {
+            background-color: transparent;
+            transition: .2s;
+        }
+    }
+
+    .star1 {
+        top: 5px;
+        left: 5px;
+        width: 2px;
+        height: 2px;
+    }
+
+    .star2 {
+        top: 18px;
+        left: 20px;
+        width: 1px;
+        height: 1px;
+    }
+
+    .star3 {
+        top: 10px;
+        left: 25px;
+        width: 2px;
+        height: 2px;
+    }
+}

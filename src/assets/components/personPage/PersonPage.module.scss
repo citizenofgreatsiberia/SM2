@@ -1,0 +1,99 @@
+$box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
+$orange-color: #F39C12;
+$font-color-dark: #fff;
+$font-color-light: #242424;
+
+.wrapper {
+    width: 85%;
+    padding-top: 40px;
+    margin: 0 auto;
+
+    .personCard {
+        display: flex;
+
+        @media screen and (max-width: 420px) {
+            flex-direction: column;
+        }
+
+        .title {
+            @media screen and (max-width: 700px) {
+                font-size: 14px;
+            }
+        }
+
+        .personPhoto {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: $box-shadow;
+            object-fit: cover;
+            filter: grayscale(100%);
+
+            @media screen and (max-width: 700px) {
+                max-width: 150px;
+            }
+
+            @media screen and (max-width: 420px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .miniTitle {
+                font-size: 12px;
+            }
+        }
+
+        .personInfo {
+            padding-left: 20px;
+
+            @media screen and (max-width: 420px) {
+                padding: 0;
+            }
+        }
+    }
+
+    .facts {
+        padding-top: 20px;
+
+        .fact {
+            padding: 4px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            box-shadow: $box-shadow;
+            cursor: pointer;
+            display: inline-block;
+        }
+    }
+
+    .filmsWrapper {
+        padding: 20px 0 20px;
+
+        .linksWrapper {
+
+            .link {
+                display: inline-block;
+                border-radius: 5px;
+                margin: 10px 10px 0 0;
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+
+    .title {
+        padding-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .miniTitle {
+        font-weight: bold;
+        text-align: start;
+    }
+
+    .accentText {
+        font-weight: bold;
+    }
+
+    .miniTitle *:not(.miniTilte) {
+        font-weight: normal;
+    }
+}
