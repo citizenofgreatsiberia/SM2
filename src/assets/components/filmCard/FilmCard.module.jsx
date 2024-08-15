@@ -71,7 +71,10 @@ export function FilmCard({ filmInfo, staff, }) {
                 <p className={styles.miniTitle}>Продолжительность: <span>{filmInfo && filmInfo.filmLength} мин.</span></p>
                 <div className={styles.watchButtons}>
                     <button className={classNames(styles.button, { [styles.dark]: theme === 'dark', [styles.light]: theme === 'light' })} onClick={moveToWatch}>Смотреть онлайн</button>
-                    {
+                    <a href={`https://www.kinopoisk.ru/film/${id}/`}>
+                        <button className={classNames(styles.button, { [styles.dark]: theme === 'dark', [styles.light]: theme === 'light' })} >Кинопоиск</button>
+                    </a>
+                     {
                         selectedFilms.some(film => film.filmId == id)
                             ? (
                                 <button
@@ -85,9 +88,6 @@ export function FilmCard({ filmInfo, staff, }) {
                                 >Добавить в избранное</button>
                             )
                     }
-                    <a href={`https://www.kinopoisk.ru/film/${id}/`}>
-                        <button className={classNames(styles.button, { [styles.dark]: theme === 'dark', [styles.light]: theme === 'light' })} >Кинопоиск</button>
-                    </a>
                 </div>
             </div>
         </div>
