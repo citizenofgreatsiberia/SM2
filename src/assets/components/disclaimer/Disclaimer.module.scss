@@ -1,0 +1,106 @@
+$bg-color-dark: #242424;
+$bg-color-light: #fff;
+$font-color-dark: #fff;
+$font-color-light: #242424;
+$orange-color: #F39C12;
+
+@mixin button-colors($color) {
+    color: $color;
+    border-color: $color;
+}
+
+.overlay {
+    display: none;
+    padding: 0 40px;
+
+    &.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .wrapper {
+        padding: 25px;
+        width: 600px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+
+        &.dark {
+            background-color: $bg-color-dark;
+        }
+
+        &.light {
+            background-color: $bg-color-light;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            padding-bottom: 20px;
+
+            @media screen and (max-width: 520px) {
+                font-size: 18px;
+            }
+        }
+
+        .text {
+            padding-bottom: 10px;
+            text-align: justify;
+            font-size: 16px;
+
+            @media screen and (max-width: 520px) {
+                font-size: 12px;
+            }
+        }
+
+        .button {
+            width: 200px;
+            padding: 10px 0;
+            align-self: center;
+            font-size: 16px;
+            margin: 5px 0;
+            background-color: transparent;
+            outline: none;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid $font-color-dark;
+            cursor: pointer;
+            transition: .3s;
+
+            @media screen and (max-width: 700px) {
+                font-size: 14px;
+            }
+
+            &.dark {
+                @include button-colors($font-color-dark);
+            }
+
+            &.light {
+                @include button-colors($font-color-light);
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    @include button-colors($orange-color);
+                }
+            }
+
+            @media (hover: none) {
+                &:active {
+                    @include button-colors($orange-color);
+                }
+            }
+        }
+    }
+}
