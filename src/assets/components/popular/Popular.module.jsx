@@ -5,6 +5,7 @@ import KinoboxPoster from "../kinoboxPoster/KinoboxPoster.module"
 import CategorySwitcher from "../kinoboxChangeCategory/CategorySwitcher.module"
 import Preloader from "../preloader/Preloader.module"
 import ErrorComponent from "../error/Error.module"
+import Disclaimer from "../disclaimer/Disclaimer.module"
 
 import styles from './Popular.module.scss'
 
@@ -27,6 +28,7 @@ export default function Popular() {
     if (data) {
         return (
             <>
+                <Disclaimer />
                 <CategorySwitcher />
                 <div className={styles.wrapper}>
                     {data.map((film) => <KinoboxPoster key={film.id} film={film} theme={theme} />)}
