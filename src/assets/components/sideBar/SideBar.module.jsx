@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink, useLocation, useParams } from 'react-router-dom'
 import classNames from 'classnames'
@@ -44,22 +44,11 @@ export default function SideBar({ handler, active }) {
     }, [location.pathname])
 
     // предотвратить скроллинг при открытом сайдбаре
-    useLayoutEffect(() => {
-        const preventScroll = (e) => {
-            e.preventDefault()
-        }
-
+    useEffect(() => {
         if (active) {
-            document.body.classList.add('no-scroll');
-            document.body.addEventListener('touchmove', preventScroll);
-        } else {
-            document.body.classList.remove('no-scroll');
-            document.body.removeEventListener('touchmove', preventScroll);
+            document.body.style.overflow = 'hidden'
         }
-
-        return () => {
-            document.body.removeEventListener('touchmove', preventScroll);
-        }
+        return () => document.body.style.overflow = 'auto'
     }, [active])
 
     // стили NavLink
