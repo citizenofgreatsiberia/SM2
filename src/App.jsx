@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { Outlet } from "react-router"
 import BackToTop from "./assets/components/backToTop/BackToTop.module"
 import Header from "@components/header/Header.module"
+import ProgressBar from "@components/progressBar/ProgressBar.module"
 
 export default function App() {
 
@@ -15,8 +16,8 @@ export default function App() {
 
   return (
     <>
-      <Header>
-      </Header>
+      <Header/>
+      <ProgressBar />
       <Outlet />
       <BackToTop />
     </>
