@@ -16,8 +16,9 @@ export default function App() {
 
   return (
     <>
-      <Header/>
-      <ProgressBar />
+      <Header>
+        <ProgressBar />
+      </Header>
       <Outlet />
       <BackToTop />
     </>
